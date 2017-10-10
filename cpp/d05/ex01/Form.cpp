@@ -6,7 +6,7 @@
 /*   By: djoly <djoly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/09 18:17:08 by djoly             #+#    #+#             */
-/*   Updated: 2017/10/10 13:51:10 by djoly            ###   ########.fr       */
+/*   Updated: 2017/10/10 18:31:42 by djoly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,8 @@ const char*   Form::GradeTooLowException::what() const throw(){
 /* OPERATORS */
 
 Form& Form::operator=(Form const & rhs) {
-  (void)rhs;
+  if (this != &rhs)
+    *this = rhs;
   return *this;
 }
 

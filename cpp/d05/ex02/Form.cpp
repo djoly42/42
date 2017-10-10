@@ -6,7 +6,7 @@
 /*   By: djoly <djoly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/09 18:17:08 by djoly             #+#    #+#             */
-/*   Updated: 2017/10/10 16:47:22 by djoly            ###   ########.fr       */
+/*   Updated: 2017/10/10 18:27:08 by djoly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ Form::GradeTooHighException::GradeTooHighException(GradeTooHighException const &
 Form::GradeTooHighException::~GradeTooHighException(void) throw(){
   return;
 }
-Form::GradeTooHighException::GradeTooHighException(std::string  error) throw(){
+Form::GradeTooHighException::GradeTooHighException(std::string  error) {
   this->_custoMsg = error;
 }
 
@@ -101,7 +101,7 @@ Form::GradeTooLowException::GradeTooLowException(GradeTooLowException const & sr
 Form::GradeTooLowException::~GradeTooLowException(void) throw(){
   return;
 }
-Form::GradeTooLowException::GradeTooLowException(std::string  error) throw(){
+Form::GradeTooLowException::GradeTooLowException(std::string  error){
   this->_custoMsg = error;
 }
 
@@ -113,7 +113,8 @@ const char*   Form::GradeTooLowException::what() const throw(){
 /* OPERATORS */
 
 Form& Form::operator=(Form const & rhs) {
-  (void)rhs;
+  if (this != &rhs)
+    *this = rhs;
   return *this;
 }
 

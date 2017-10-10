@@ -6,7 +6,7 @@
 /*   By: djoly <djoly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/10 14:28:21 by djoly             #+#    #+#             */
-/*   Updated: 2017/10/10 16:34:49 by djoly            ###   ########.fr       */
+/*   Updated: 2017/10/10 18:29:52 by djoly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,7 @@ void  ShrubberyCreationForm::execute(Bureaucrat const & executor) const{
 /* OPERATORS */
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm const & rhs) {
+  if(this != &rhs)
+    *this = rhs;
   return *this;
 }

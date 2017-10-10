@@ -6,7 +6,7 @@
 /*   By: djoly <djoly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/10 14:00:52 by djoly             #+#    #+#             */
-/*   Updated: 2017/10/10 16:33:51 by djoly            ###   ########.fr       */
+/*   Updated: 2017/10/10 18:28:31 by djoly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ void  RobotomyRequestForm::execute(Bureaucrat const & executor) const{
 /* OPERATORS */
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const & rhs) {
+  if(this != &rhs)
+    *this = rhs;
   return *this;
 }   

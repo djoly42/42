@@ -6,7 +6,7 @@
 /*   By: djoly <djoly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/09 13:30:06 by djoly             #+#    #+#             */
-/*   Updated: 2017/10/10 13:36:09 by djoly            ###   ########.fr       */
+/*   Updated: 2017/10/10 18:32:26 by djoly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,11 +127,9 @@ Bureaucrat::GradeTooLowException& Bureaucrat::GradeTooLowException::operator=(Gr
 
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat const & rhs) {
-  (void)rhs;
- /*  if (this != &rhs){
-      this->_name = rhs.getName();
-      this->_grade = rhs.getGrade();
-    }*/
+    if (this != &rhs){
+      *this= rhs;
+    }
   return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: djoly <djoly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/10 15:16:27 by djoly             #+#    #+#             */
-/*   Updated: 2017/10/10 16:37:00 by djoly            ###   ########.fr       */
+/*   Updated: 2017/10/10 18:27:55 by djoly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ void  PresidentialPardonForm::execute(Bureaucrat const & executor) const{
 /* OPERATORS */
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm const & rhs) {
+  if (this != &rhs)
+    *this = rhs;
   return *this;
 }

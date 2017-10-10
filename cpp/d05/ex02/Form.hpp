@@ -6,7 +6,7 @@
 /*   By: djoly <djoly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/09 18:17:11 by djoly             #+#    #+#             */
-/*   Updated: 2017/10/10 16:43:45 by djoly            ###   ########.fr       */
+/*   Updated: 2017/10/10 18:26:17 by djoly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ public:
 
     class GradeTooHighException : public std::exception{
         public:
-        GradeTooHighException(std::string  error)throw();
+        GradeTooHighException(std::string  error);
         GradeTooHighException(GradeTooHighException const & src)throw();      
         virtual ~GradeTooHighException(void)throw();
         virtual const char* what() const throw();
@@ -54,7 +54,7 @@ public:
   
   class GradeTooLowException : public std::exception{
     public:
-      GradeTooLowException(std::string  error)throw();
+      GradeTooLowException(std::string  error);
       GradeTooLowException(GradeTooLowException const & src)throw();      
       virtual ~GradeTooLowException(void)throw();
       virtual const char* what() const throw();
