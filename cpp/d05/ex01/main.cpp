@@ -6,7 +6,7 @@
 /*   By: djoly <djoly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/09 14:24:10 by djoly             #+#    #+#             */
-/*   Updated: 2017/10/10 13:52:22 by djoly            ###   ########.fr       */
+/*   Updated: 2017/10/10 18:12:56 by djoly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 
 int main(void) {
+  std::cout << "1/------------" << std::endl;
+  
   try
   {
     Bureaucrat B("BOBO" , 200);
@@ -24,6 +26,8 @@ int main(void) {
     std::cout << e.what() << std::endl;
     
   }
+  std::cout << "1/------------" << std::endl;
+  
   try
   {
     Bureaucrat B("BOBO" , -5);
@@ -34,6 +38,8 @@ int main(void) {
     std::cout << e.what() << std::endl;
     
   }
+  std::cout << "3/------------" << std::endl;
+  
   try {
     Form f("toto", 1, 1);
     std::cout << f << std::endl;
@@ -44,6 +50,8 @@ int main(void) {
   {
     std::cout << e.what() << std::endl;    
   }
+  std::cout << "4/------------" << std::endl;
+  
   try {
     Form g("tata", 1, -21);
     std::cout << g << std::endl;
@@ -52,6 +60,8 @@ int main(void) {
   {
     std::cout << e.what() << std::endl;    
   }
+  std::cout << "5/------------" << std::endl;
+  
   try {
     Form g("tata", 221, 2);
     std::cout << g << std::endl;
@@ -60,6 +70,8 @@ int main(void) {
   {
     std::cout << e.what() << std::endl;    
   }
+  std::cout << "6/------------" << std::endl;
+  
   try {
     Form g("tata", 1, 200);
     std::cout << g << std::endl;
@@ -68,7 +80,8 @@ int main(void) {
   {
     std::cout << e.what() << std::endl;    
   }
-
+  std::cout << "7/------------" << std::endl;
+  
   Bureaucrat BB("BUBU" , 20);  
   Form f1("papier" , 10, 5);
   Form f2("papier2" , 50, 5);
@@ -82,6 +95,8 @@ int main(void) {
   Form f4("papier4" , 50, 5);
   std::cout << f3 << std::endl;
   std::cout << f4 << std::endl;
+  std::cout << "8/------------" << std::endl;
+  
   try {
     f3.beSigned(BB);
     
@@ -90,6 +105,8 @@ int main(void) {
   {
     std::cout << e.what() << std::endl;    
   }
+  std::cout << "9/------------" << std::endl;
+  
   try {
     f4.beSigned(BB);
   }
@@ -97,6 +114,8 @@ int main(void) {
   {
     std::cout << e.what() << std::endl;    
   }
+  std::cout << "10/------------" << std::endl;
+  
   Form f5("papier5" , 50, 5);
   std::cout << f5 << std::endl;
   f5.beSigned(BB);
