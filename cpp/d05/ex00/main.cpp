@@ -6,7 +6,7 @@
 /*   By: djoly <djoly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/09 14:24:10 by djoly             #+#    #+#             */
-/*   Updated: 2017/10/09 18:04:26 by djoly            ###   ########.fr       */
+/*   Updated: 2017/10/10 12:04:57 by djoly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main(void) {
   {
     Bureaucrat B("BOBO" , 5);
     while(1){
-      B.gradeMoins();
+      B.gradePlus();
       std::cout << B << std::endl;
        
     }
