@@ -6,7 +6,7 @@
 /*   By: djoly <djoly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/09 14:24:10 by djoly             #+#    #+#             */
-/*   Updated: 2017/10/10 17:20:16 by djoly            ###   ########.fr       */
+/*   Updated: 2017/10/10 17:29:11 by djoly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 
 int main(void) {
@@ -113,7 +114,56 @@ int main(void) {
     std::cout << e.what() << std::endl;
     
   }
+  std::cout << "7/------------" << std::endl;
+  
+  try{
+ 
+    Intern II;
+    Form * f= II.makeForm("robotomy request", "robotomyCREATION");  
+    std::cout << *f << std::endl;
+  }
+  catch (std::exception & e){
+    std::cout << e.what() << std::endl;
+    
+  }
 
-
+  std::cout << "8/------------" << std::endl;
+  
+  try{
+ 
+    Intern II;
+    Form * f= II.makeForm("Shrubbery creation", "ShrubberyCREATION");  
+    std::cout << *f << std::endl;
+  }
+  catch (std::exception & e){
+    std::cout << e.what() << std::endl;
+    
+  }
+  std::cout << "9/------------" << std::endl;
+  
+  try{
+ 
+    Intern II;
+    Form * f= II.makeForm("presidential pardon", "PresidentialCREATION");  
+    std::cout << *f << std::endl;
+  }
+  catch (std::exception & e){
+    std::cout << e.what() << std::endl;
+    
+  }
+  std::cout << "10/------------" << std::endl;
+  try{
+    
+    Intern II;
+    Form * f= II.makeForm("MAMACITA", "PresidentialCREATION");  
+    if(f)
+      std::cout << *f << std::endl;
+    else
+      std::cout << "ptr null" << std::endl;
+     }
+     catch (std::exception & e){
+       std::cout << e.what() << std::endl;
+       
+     }
   return (0);
 }
