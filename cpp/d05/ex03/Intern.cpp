@@ -33,9 +33,12 @@ Form* Intern::makeForm(std::string formName , std::string name){
   return ret;
 }
 
+
+
 /* OPERATORS */
 
 Intern& Intern::operator=(Intern const & rhs) {
-  *this = rhs;
+  if(this != &rhs)
+    *this = rhs;
   return *this;
 }

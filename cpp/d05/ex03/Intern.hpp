@@ -6,7 +6,7 @@
 /*   By: djoly <djoly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/10 16:54:51 by djoly             #+#    #+#             */
-/*   Updated: 2017/10/10 17:21:39 by djoly            ###   ########.fr       */
+/*   Updated: 2017/10/10 19:26:15 by djoly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@
 
 class Intern {
 public:
-   Intern(void);
-   Intern(Intern const & src);
-   virtual ~Intern(void);
+    Intern(void);
+    Intern(Intern const & src);
+    virtual ~Intern(void);
+    Form * makeForm(std::string formName, std::string name);
 
-   Form * makeForm(std::string formName, std::string name);
+    Intern& operator=(Intern const & rhs);
 
-  Intern& operator=(Intern const & rhs);
 };
 
 #endif
