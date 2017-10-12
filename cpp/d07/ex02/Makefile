@@ -10,8 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-CC=clang++
-CFLAGS= -Wall -Wextra -Werror
+CC=g++#clang++
+CFLAGS=# -Wall -Wextra -Werror
 NAME=a.out
 
 SRC=main.cpp \

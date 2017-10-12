@@ -128,30 +128,5 @@ int main(void)
     }
     std::cout << std::endl;
 
-    std::cout << "8/ --- int[5] fill" << std::endl;
-    
-        try
-        {
-            Array<int> ar(5);
-            ar[0] = 0;
-            ar[1] = 10;
-            ar[2] = 20;
-            ar[3] = 30;
-            ar[4] = 40;
-    
-            Array<int> ar10(2);
-            //ar = ar10;
-            Array<int> ar2 = ar;
-            Array<int> ar3(ar);
-            std::cout << ar;
-            std::cout << ar2;
-            std::cout << ar3;
-            std::cout << ar10;
-        }
-        catch (std::exception &e)
-        {
-            std::cout << e.what() << std::endl;
-        }
-        std::cout << std::endl;
     return 0;
 }

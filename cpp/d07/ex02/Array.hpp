@@ -25,20 +25,20 @@ public:
     
     Array(void){
         std::cout << "call constructor void" << std::endl;
-        /*if (this->isConst(this)){
+        if (this->isConst(*this)){
             std::cout << "is const" <<std::endl;
            
-        }*/
+        }
        this->tab = new T[0]();
        this->_len = 0;
     };
 
     Array(unsigned int n){
         std::cout << "call constructor n" << std::endl;
-        /*if (this->isConst(this)){
+        if (this->isConst(*this)){
             std::cout << "is const" <<std::endl;
             
-        }*/
+        }
         if(n == 0){
             Array();
         }
@@ -49,10 +49,11 @@ public:
     };
 
     Array(Array const & src){
-        /*if (this->isConst(this)){
+        if (this->isConst(*this)){
             std::cout << "is const" <<std::endl;
+	   
             
-        }*/
+        }
         std::cout << "call constructor src" << std::endl;
         
         this->tab = new T[src.size()];
@@ -70,21 +71,23 @@ public:
         delete [] this->tab ;
         //std::cout << "end destructor " << std::endl<< std::endl;
     };
-/*
-    bool isConst(Array& x)
+
+    bool isConst(Array &x)
     {
+	    std::cout << "CONST FALSE" << std::endl;
         (void)x;
-        this->_b = true;
+        this->_b = false;
         return false;
     }
     
     bool isConst(Array const& x)
     {
+	    std::cout << "CONST TRUE" << std::endl;
         (void)x;
         this->_b = true;
         return true;
     }
-  */  
+  
 
     unsigned int     size(void) const{
         return this->_len;
@@ -109,9 +112,10 @@ public:
     };
   
     T& operator[](unsigned int i)const{
-        /*if( this->_b )
+        if( this->_b ){
             std::cout << " IS CONST " << std::endl;
-        */
+	    
+	}
         if (i >= _len){
             throw std::exception();
         }
