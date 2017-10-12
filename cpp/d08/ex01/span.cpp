@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   span.cpp                                           :+:      :+:    :+:   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djoly <djoly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,38 +10,82 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "span.hpp"
+#include "Span.hpp"
 
-#include "span.hpp"
+#include "Span.hpp"
 
 /* CONSTRUCTORS */
 
-span::span(unsigned int n): _cur(0), _max(n){
+Span::Span(unsigned int n): _cur(0), _max(n), _tab(n), _short(-1), _long(-1){
     return;
 }
 
-span::span(span const & src) {
+Span::Span(Span const & src) {
     *this = src;
     return;
 }
 
-span::~span(void) {
+Span::~Span(void) {
     return;
 }
 
 /* MEMBERS */
 
-void    span::addNumber(int n){
+void    Span::addNumber(int n){
     if (this->_cur == this->_max)
-        throw span::myException("addNumber: list full");
+        throw Span::myException("addNumber: list full");
     this->_cur += 1;
-    this->_list.push_back(n);
+    this->_tab.push_back(n);
+    std::sort(this->_tab.begin(), this->_tab.end());
+
+    if (this->_cur > 1){
+        std::vector<int>::iterator it;
+        it = find (this->_tab.begin(), this->_tab.end(), n);
+        if (n - *(it-1) < this->_short)
+            this->_short= n - *(it-1);
+        else if(it[1] - n)
+            this->_short = it[1] - n;
+        this->_long = this->_tab.back() - this->_tab.front();
+        std::cout << "front " << this->_tab.back() << " front " << this->_tab.front() << " _long " << this->_long << std::endl;
+    }
+    //std::cout << "find " << *it << "find + 1 " << it[1] << "find - 1 " << *(it-1) << std::endl;
+    
+
 
 }
 
+int     Span::shortestSpan(void){
+    return this->_short;
+}
+
+int     Span::longestSpan(void){
+    return this->_long;
+}
+/* SUBCLASS */
+
+Span::myException::myException(myException const & src) {
+    *this = src;
+    return;
+  }
+  
+Span::myException::~myException(void) throw(){
+    return;
+  }
+Span::myException::myException(std::string  error) {
+    this->_custoMsg = error;
+  }
+  
+const char*   Span::myException::what() const throw(){
+    return ("Erreur : GradeTooHighException " + this->_custoMsg).c_str();
+  }
+  
 
 /* OPERATORS */
-
-span&    span::operator=(span const & rhs) {
+Span::myException& Span::myException::operator=(myException const & rhs){
+    (void)rhs;
+    
+    return *this;
+  }
+Span&    Span::operator=(Span const & rhs) {
     return *this;
 }   

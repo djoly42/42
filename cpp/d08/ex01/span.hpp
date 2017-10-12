@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   span.hpp                                           :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djoly <djoly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,20 +13,24 @@
 
 #ifndef SPAN_HPP
 # define SPAN_HPP
+
+#include <vector>
 #include <list>
+
+#include <algorithm>
 #include <iostream>
 
-class span {
+class Span {
 public:
-    span(unsigned int n);
-    span(span const & src);
-    ~span(void);
+    Span(unsigned int n);
+    Span(Span const & src);
+    ~Span(void);
 
     void    addNumber(int n);
     int     shortestSpan(void);
     int     longestSpan(void);
     
-    span&   operator=(span const & rhs);
+    Span&   operator=(Span const & rhs);
 
   
     class         myException : public std::exception{
@@ -42,11 +46,13 @@ public:
         std::string   _custoMsg;
   };
 private:
-    span(void);
+    Span(void);
     unsigned int    _cur;
     unsigned int    _max;
+    int             _short;
+    int             _long;
     
-    std::list<int>  _list;
+    std::vector<int>  _tab;
 };
 
 #endif
