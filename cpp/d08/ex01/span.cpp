@@ -16,7 +16,7 @@
 
 /* CONSTRUCTORS */
 
-Span::Span(unsigned int n): _cur(0), _max(n), _tab(n), _short(-1), _long(-1){
+Span::Span(unsigned int n): _cur(0), _max(n), _short(-1), _long(-1){
     return;
 }
 
@@ -46,12 +46,8 @@ void    Span::addNumber(int n){
         else if(it[1] - n)
             this->_short = it[1] - n;
         this->_long = this->_tab.back() - this->_tab.front();
-        std::cout << "front " << this->_tab.back() << " front " << this->_tab.front() << " _long " << this->_long << std::endl;
+        std::cout << "back " << this->_tab.back() << " front " << this->_tab.front() << " _long " << this->_long << std::endl;
     }
-    //std::cout << "find " << *it << "find + 1 " << it[1] << "find - 1 " << *(it-1) << std::endl;
-    
-
-
 }
 
 int     Span::shortestSpan(void){
