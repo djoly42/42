@@ -6,7 +6,7 @@
 /*   By: djoly <djoly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/11 10:36:50 by djoly             #+#    #+#             */
-/*   Updated: 2017/10/12 09:47:34 by djoly            ###   ########.fr       */
+/*   Updated: 2017/10/12 10:04:24 by djoly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,11 @@ public:
     bool            _b;
     
     Array(void){
-        std::cout << "call constructor void" << std::endl;
        this->tab = new T[0]();
        this->_len = 0;
     };
 
     Array(unsigned int n){
-        std::cout << "call constructor n" << std::endl;
         if(n == 0){
             Array();
         }
@@ -40,9 +38,7 @@ public:
         }
     };
 
-    Array(Array const & src){
-        std::cout << "call constructor src" << std::endl;
-        
+    Array(Array const & src){        
         this->tab = new T[src.size()];
         this->_len = src.size();
         for(unsigned int i = 0; i < this->_len; i++){
@@ -53,9 +49,7 @@ public:
     };
    
     virtual ~Array(void){
-        //std::cout << "call destructor " << std::endl;
         delete [] this->tab ;
-        //std::cout << "end destructor " << std::endl<< std::endl;
     };
 
     bool isConst(Array &x)
