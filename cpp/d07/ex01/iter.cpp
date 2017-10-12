@@ -6,7 +6,7 @@
 /*   By: djoly <djoly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/11 09:59:45 by djoly             #+#    #+#             */
-/*   Updated: 2017/10/12 09:53:23 by djoly            ###   ########.fr       */
+/*   Updated: 2017/10/12 09:59:36 by djoly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void        iter(T * add, int  len , void(*funct)(T const &) ){
        funct(add[i]);
    }
 }
-/*
+
 // pointeur de fonction sur argument non constant
 template< typename T>
 void        iter(T * add, int  len , void(*funct)(T &) ){
@@ -40,7 +40,7 @@ void upper(char & i){
     return ;
 }
 
-*/
+
 // fonction const
 template< typename T >
 void print( T const & x ) { std::cout << x << std::endl; return; }
@@ -84,7 +84,7 @@ int     main(void){
     }
     std::cout << std::endl;
 
-    int tab[] = { 0, 1, 2, 3, 4 }; // <--- J'ai jamais compris pourquoi on peut pas ecrire int[] tab. Ca aurait plus de sens vous trouvez pas ?
+    int tab[] = { 0, 1, 2, 3, 4 }; 
     Awesome tab2[5];
     
     ::iter( tab, 5, print );
