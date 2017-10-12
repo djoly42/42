@@ -6,12 +6,14 @@
 /*   By: djoly <djoly@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/11 09:59:45 by djoly             #+#    #+#             */
-/*   Updated: 2017/10/12 09:33:58 by djoly            ###   ########.fr       */
+/*   Updated: 2017/10/12 09:44:46 by djoly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
+
+// pointeur de fonction sur argument constant
 template< typename T>
 void        iter(T * add, int  len , void(*funct)(T const &) ){
    for ( int i=0; i < len; i++){
@@ -19,6 +21,7 @@ void        iter(T * add, int  len , void(*funct)(T const &) ){
    }
 }
 
+// pointeur de fonction sur argument non constant
 template< typename T>
 void        iter(T * add, int  len , void(*funct)(T &) ){
    for ( int i=0; i < len; i++){
@@ -26,6 +29,7 @@ void        iter(T * add, int  len , void(*funct)(T &) ){
    }
 }
 
+// fonction qui modifie l arg
 void plus(int & i){
     ++i;
     return ;
@@ -37,6 +41,7 @@ void upper(char & i){
 }
 
 
+// fonction const
 template< typename T >
 void print( T const & x ) { std::cout << x << std::endl; return; }
 
